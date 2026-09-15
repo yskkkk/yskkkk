@@ -15,8 +15,8 @@
   <p>계좌 화면으로 연결 중…</p>
   <p><a href="https://simpsons-ctrl-influences-correlation.trycloudflare.com">바로 열기</a></p>
   <script>
-    const src = "https://raw.githubusercontent.com/yskkkk/yskkkk/main/kis-account/current.json?t=" + Date.now();
-    fetch(src, { cache: "no-store" })
+    const src = "https://api.github.com/repos/yskkkk/yskkkk/contents/kis-account/current.json?t=" + Date.now();
+    fetch(src, { cache: "no-store", headers: { Accept: "application/vnd.github.raw" } })
       .then((r) => r.json())
       .then((d) => { if (d && d.url) location.replace(d.url); })
       .catch(() => { location.replace("https://simpsons-ctrl-influences-correlation.trycloudflare.com"); });
